@@ -65,6 +65,15 @@ public class ClaimImplTest {
     }
 
     @Test
+    public void shouldGetLongValue() throws Exception {
+        JsonElement value = gson.toJsonTree(123L);
+        ClaimImpl claim = new ClaimImpl(value);
+
+        assertThat(claim.asLong(), is(notNullValue()));
+        assertThat(claim.asLong(), is(123L));
+    }
+
+    @Test
     public void shouldGetNullIntIfNotPrimitiveValue() throws Exception {
         JsonElement value = gson.toJsonTree(new Object());
         ClaimImpl claim = new ClaimImpl(value);

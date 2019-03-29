@@ -29,6 +29,9 @@ public interface Claim {
     @Nullable
     Integer asInt();
 
+    @Nullable
+    Long asLong();
+
     /**
      * Get this Claim as a Double.
      * If the value isn't of type Double or it can't be converted to a Double, null will be returned.
